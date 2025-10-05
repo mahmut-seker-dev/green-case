@@ -17,7 +17,7 @@ Amaç, modern yazılım geliştirme standartlarına uygun bir **Laravel 12 + Vit
 | Diğer | Soft Delete, Restore, Toast Notifications, Custom Middleware, DataTables, Laravel Sanctum|
 
 ---
-
+[Proje Dökümantasyonu](docs/green-case.pdf)
 ## ⚙️ Kurulum Adımları
 
 ```bash
