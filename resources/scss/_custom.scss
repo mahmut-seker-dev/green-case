@@ -1,0 +1,20 @@
+/* Silinen Kayıtlar menüsü stilleri */
+.dropdown-menu-dark {
+    background: #1c1f24 !important;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    min-width: 220px;
+}
+
+.dropdown-item {
+    color: #ddd !important;
+    transition: all 0.2s ease;
+    font-size: 14px;
+    padding: 10px 15px;
+    border-radius: 6px;
+}
+
+.dropdown-item:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff !important;
+    transform: translateX(4px);
+}

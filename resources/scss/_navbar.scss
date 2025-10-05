@@ -1,0 +1,55 @@
+.navbar {
+    background: linear-gradient(90deg, #059347, #03361b);
+    transition: background 0.3s ease;
+
+    .nav-link {
+        color: #e2e6ea !important;
+        font-weight: 500;
+        margin-right: 10px;
+        transition: all 0.2s ease;
+
+        &:hover, &.active {
+            color: #fff !important;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 6px;
+        }
+    }
+
+    .navbar-brand {
+        color: #fff !important;
+        font-size: 1.1rem;
+        letter-spacing: 0.5px;
+    }
+
+    .dropdown-menu {
+        font-size: 0.95rem;
+    }
+}
+
+
+/* === Admin Dropdown Menü Düzeltmeleri === */
+.navbar .dropdown-menu {
+    background-color: #1c1f24 !important; /* koyu gri arka plan */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    min-width: 180px;
+}
+
+.navbar .dropdown-item {
+    color: #ddd !important;
+    padding: 10px 15px;
+    transition: all 0.2s ease;
+    font-size: 14px;
+}
+
+.navbar .dropdown-item:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #fff !important;
+    transform: translateX(4px);
+}
+
+.navbar .dropdown-item:active {
+    background-color: #007bff !important;
+    color: #fff !important;
+}
