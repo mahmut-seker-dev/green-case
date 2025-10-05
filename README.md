@@ -18,6 +18,10 @@ Amaç, modern yazılım geliştirme standartlarına uygun bir **Laravel 12 + Vit
 
 ---
 [Proje Dökümantasyonu](docs/green-case.pdf)
+
+[Veritabanı Diagramı](docs/database_diagram.pdf)
+
+
 ## ⚙️ Kurulum Adımları
 
 ```bash
