@@ -1,7 +1,7 @@
 # 🌿 Green Case – Full Stack Developer Case Study
 
 Bu proje, **Green Holding** için geliştirilen bir Full Stack Developer case çalışmasıdır.  
-Amaç, modern yazılım geliştirme standartlarına uygun bir **Laravel 10 + Vite + Bootstrap 5** mimarisi oluşturarak müşteri ve kullanıcı yönetim sistemini tasarlamaktır.
+Amaç, modern yazılım geliştirme standartlarına uygun bir **Laravel 12 + Vite + Bootstrap 5** mimarisi oluşturarak müşteri ve kullanıcı yönetim sistemini tasarlamaktır.
 
 ---
 
