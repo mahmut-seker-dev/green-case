@@ -9,7 +9,7 @@ Amaç, modern yazılım geliştirme standartlarına uygun bir **Laravel 10 + Vit
 
 | Katman | Teknoloji |
 |:--|:--|
-| Backend | **Laravel 10 (PHP 8.2)** |
+| Backend | **Laravel 12+ (PHP 8.2)** |
 | Frontend | **Bootstrap 5.3**, **Vite**, **jQuery**, **SCSS** |
 | Veritabanı | **MySQL / MariaDB** |
 | DataTable | **Yajra Laravel DataTables** |
