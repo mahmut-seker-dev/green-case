@@ -9,12 +9,12 @@ Amaç, modern yazılım geliştirme standartlarına uygun bir **Laravel 10 + Vit
 
 | Katman | Teknoloji |
 |:--|:--|
-| Backend | **Laravel 12+ (PHP 8.2)** |
+| Backend | **Laravel 12 (PHP 8.3)** |
 | Frontend | **Bootstrap 5.3**, **Vite**, **jQuery**, **SCSS** |
 | Veritabanı | **MySQL / MariaDB** |
 | DataTable | **Yajra Laravel DataTables** |
 | Yetkilendirme | **RBAC Policy System** |
-| Diğer | Soft Delete, Restore, Toast Notifications, Custom Middleware |
+| Diğer | Soft Delete, Restore, Toast Notifications, Custom Middleware, DataTables, Laravel Sanctum|
 
 ---
 
@@ -76,16 +76,7 @@ Toplam aktif müşteri, silinmiş müşteri ve kullanıcı sayısı
 
 Dinamik kartlar ile istatistik gösterimi
 
-📸 Ekran Görselleri
 
-📌 Öneri: Buraya 3–4 ekran görüntüsü ekleyebilirsin.
-Örnek:
-
-dashboard.png
-
-customers.png
-
-trashed_users.png
 
 <p align="center">
   <img src="docs/dashboard.png" width="80%" alt="Dashboard">
@@ -130,11 +121,6 @@ Responsive UI: Mobil cihazlar için optimize edilmiş yapı.
 
 Mahmut Şeker
 📍 Full Stack Developer
-🌐 LinkedIn
-
-💻 GitHub
-
-🏁 Lisans
 
 Bu proje Green Holding case çalışması kapsamında geliştirilmiştir.
 Her hakkı saklıdır © 2025 – Mahmut Şeker
