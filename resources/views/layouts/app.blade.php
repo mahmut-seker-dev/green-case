@@ -14,8 +14,7 @@
     @stack('styles')
 </head>
 
-<body>
-    <!-- Navbar -->
+<body class="app-layout">
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-gradient-dark shadow-sm">
         <div class="container">
@@ -30,6 +29,14 @@
 
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto align-items-lg-center">
+                    
+                    <!-- Theme Toggle -->
+                    <li class="nav-item me-lg-2">
+                        <button class="btn btn-sm btn-outline-light theme-toggle" id="themeToggle" title="Tema Değiştir">
+                            <i class="bi bi-sun-fill theme-icon-light"></i>
+                            <i class="bi bi-moon-fill theme-icon-dark d-none"></i>
+                        </button>
+                    </li>
                     <!-- Ortak Menüler -->
                     <li class="nav-item">
                         <a class="nav-link {{ request()->routeIs('dashboard') ? 'active' : '' }}"
@@ -115,7 +122,7 @@
         </div>
     </nav>
 
-    <div class="container">
+    <div class="container py-4">
         @yield('content')
     </div>
 

@@ -1,10 +1,12 @@
 @import "bootstrap/scss/bootstrap";
 @import "bootstrap-icons/font/bootstrap-icons.css";
 
-@import "./_datatables.scss";
+@import "./_theme.scss";
+@import "./_modern-layout.scss";
 @import "./navbar.scss";
 @import "./pages/dashboard";
 @import "pages/trashed";
 @import "./_custom.scss";
+@import "./_datatables.scss";
 
 

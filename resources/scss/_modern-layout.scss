@@ -1,0 +1,317 @@
+// 🎨 MODERN LAYOUT STYLES
+// Tüm sayfalarda kullanılacak modern tasarım elementleri
+
+// ========================================
+// BACKGROUND PATTERN
+// ========================================
+
+body {
+    position: relative;
+    min-height: 100vh;
+    
+    &::before {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: var(--page-bg);
+        z-index: -2;
+    }
+    
+    &::after {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0.03;
+        z-index: -1;
+        background-image: 
+            radial-gradient(circle at 25% 25%, var(--primary-color) 1px, transparent 1px),
+            radial-gradient(circle at 75% 75%, var(--primary-color) 1px, transparent 1px);
+        background-size: 50px 50px;
+        animation: patternMove 30s linear infinite;
+    }
+}
+
+@keyframes patternMove {
+    from { background-position: 0 0, 25px 25px; }
+    to { background-position: 50px 50px, 75px 75px; }
+}
+
+// ========================================
+// CONTAINER IMPROVEMENTS
+// ========================================
+
+.container {
+    position: relative;
+    z-index: 1;
+}
+
+// Content Wrapper
+.content {
+    padding: 2rem 0;
+    min-height: calc(100vh - 56px); // Navbar height
+}
+
+// ========================================
+// PAGE HEADERS
+// ========================================
+
+h1, h2, h3, h4, h5, h6 {
+    color: var(--text-primary);
+    
+    [data-theme="dark"] & {
+        font-weight: 600;
+    }
+}
+
+// Page Title
+.page-title {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    position: relative;
+    display: inline-block;
+    
+    &::after {
+        content: '';
+        position: absolute;
+        bottom: -8px;
+        left: 0;
+        width: 60px;
+        height: 4px;
+        background: linear-gradient(90deg, var(--primary-color), transparent);
+        border-radius: 2px;
+    }
+}
+
+// ========================================
+// MODERN CARDS
+// ========================================
+
+.block, .card {
+    border-radius: 16px !important;
+    border: 1px solid var(--border-color) !important;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    
+    &:hover {
+        box-shadow: var(--shadow-lg) !important;
+        transform: translateY(-2px);
+    }
+    
+    .block-header, .card-header {
+        background: var(--bg-tertiary) !important;
+        border-bottom: 2px solid var(--border-color) !important;
+        padding: 1.25rem !important;
+        
+        h1, h2, h3, h4, h5 {
+            margin: 0;
+            color: var(--text-primary);
+        }
+    }
+    
+    .block-content, .card-body {
+        padding: 1.5rem !important;
+    }
+}
+
+// ========================================
+// BUTTONS
+// ========================================
+
+.btn {
+    border-radius: 10px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    
+    &:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+    
+    &:active {
+        transform: translateY(0);
+    }
+}
+
+.btn-success {
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
+    border: none;
+    
+    &:hover {
+        background: linear-gradient(135deg, var(--primary-dark), var(--primary-color));
+    }
+}
+
+.btn-primary {
+    border-radius: 10px;
+}
+
+.btn-danger {
+    border-radius: 10px;
+}
+
+// ========================================
+// THEME TOGGLE BUTTON
+// ========================================
+
+.theme-toggle {
+    border-radius: 50px !important;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    transition: all 0.3s ease;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    
+    &:hover {
+        transform: scale(1.1) rotate(15deg);
+        background-color: rgba(255, 255, 255, 0.2) !important;
+        border-color: rgba(255, 255, 255, 0.5);
+    }
+    
+    &:active {
+        transform: scale(0.95);
+    }
+    
+    i {
+        font-size: 1.1rem;
+        transition: all 0.3s ease;
+    }
+}
+
+// ========================================
+// DASHBOARD CARDS
+// ========================================
+
+[data-theme="dark"] .card {
+    .card-body {
+        i.fa {
+            filter: brightness(1.2);
+        }
+    }
+}
+
+// ========================================
+// FORM INPUTS
+// ========================================
+
+.form-control, .form-select {
+    border-radius: 10px;
+    border-width: 2px;
+    
+    &:focus {
+        box-shadow: 0 0 0 0.25rem rgba(var(--primary-rgb), 0.25);
+    }
+}
+
+textarea.form-control {
+    border-radius: 12px;
+}
+
+// ========================================
+// TABLES
+// ========================================
+
+.table-wrapper {
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.table {
+    margin-bottom: 0;
+    
+    thead {
+        position: sticky;
+        top: 0;
+        z-index: 10;
+    }
+}
+
+// ========================================
+// MODALS
+// ========================================
+
+.modal-content {
+    border-radius: 16px;
+    border: none;
+}
+
+.modal-header {
+    border-radius: 16px 16px 0 0;
+    background: var(--bg-tertiary);
+}
+
+// ========================================
+// NAVBAR THEME AWARE
+// ========================================
+
+.navbar {
+    background: var(--navbar-bg) !important;
+    border-bottom: 2px solid var(--border-color);
+    
+    .navbar-brand {
+        color: var(--navbar-text) !important;
+    }
+    
+    .nav-link {
+        color: rgba(255, 255, 255, 0.85) !important;
+        
+        &:hover {
+            color: rgba(255, 255, 255, 1) !important;
+        }
+        
+        &.active {
+            color: var(--primary-light) !important;
+            font-weight: 600;
+        }
+    }
+}
+
+[data-theme="dark"] .navbar {
+    .nav-link {
+        &.active {
+            color: var(--primary-color) !important;
+        }
+    }
+}
+
+// ========================================
+// SMOOTH SCROLLBAR
+// ========================================
+
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg-tertiary);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--primary-color);
+    border-radius: 5px;
+    
+    &:hover {
+        background: var(--primary-dark);
+    }
+}
+
+// ========================================
+// LOADING STATES
+// ========================================
+
+.dataTables_processing {
+    background: var(--bg-card);
+    color: var(--text-primary);
+    border-radius: 12px;
+    box-shadow: var(--shadow-lg);
+}

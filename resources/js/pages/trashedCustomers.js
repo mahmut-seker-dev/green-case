@@ -17,6 +17,16 @@ $(function () {
 
     // 🧾 DataTable başlat
     const table = $table.DataTable({
+        layout: {
+            bottomEnd: {
+                paging: {
+                    numbers: true,      // Sayfa numaralarını göster
+                    firstLast: true,    // « ve » butonlarını göster
+                    previousNext: true, // Önceki/Sonraki butonlarını göster
+                    type: 'full_numbers' // Tam sayfa kontrolü
+                }
+            }
+        },
         ajax: "/trash/customers/data",
         responsive: {
             details: {
@@ -73,10 +83,40 @@ $(function () {
             infoFiltered: "(_MAX_ kayıt içinden filtrelendi)",
             search: "Ara:",
             paginate: {
+                first: "İlk",
                 previous: "Önceki",
-                next: "Sonraki"
+                next: "Sonraki",
+                last: "Son"
             },
             processing: "Yükleniyor..."
+        },
+        drawCallback: function() {
+            // Sadece 3 sayfa numarası göster (aktif + önceki + sonraki)
+            const api = this.api();
+            const currentPage = api.page();
+            
+            $('.dt-paging-button').each(function() {
+                const $btn = $(this);
+                const pageIdx = $btn.find('button').attr('data-dt-idx');
+                
+                // İlk, Son, Önceki, Sonraki, Ellipsis ve Aktif sayfayı her zaman göster
+                if ($btn.hasClass('first') || $btn.hasClass('last') || 
+                    $btn.hasClass('previous') || $btn.hasClass('next') ||
+                    $btn.hasClass('active') || $btn.find('.ellipsis').length > 0) {
+                    return;
+                }
+                
+                // Sayfa numarasını kontrol et
+                const pageNum = parseInt(pageIdx);
+                if (!isNaN(pageNum)) {
+                    // Aktif sayfadan 1 önceki ve 1 sonrakini göster
+                    if (pageNum < currentPage - 1 || pageNum > currentPage + 1) {
+                        $btn.hide();
+                    } else {
+                        $btn.show();
+                    }
+                }
+            });
         }
     });
 

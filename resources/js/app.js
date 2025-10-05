@@ -5,6 +5,10 @@ import "datatables.net-bs5/css/dataTables.bootstrap5.min.css";
 import "datatables.net-responsive-bs5/css/responsive.bootstrap5.min.css";
 
 window.$ = window.jQuery = $; // global tanımlama
+window.bootstrap = bootstrap; // Bootstrap'i global yap
+
+// Theme Manager
+import './theme.js';
 
 
 $.ajaxSetup({
