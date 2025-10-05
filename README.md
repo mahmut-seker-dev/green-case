@@ -80,6 +80,14 @@ Toplam aktif müşteri, silinmiş müşteri ve kullanıcı sayısı
 
 Dinamik kartlar ile istatistik gösterimi
 
+![Login Ekranı](docs/pages/login.png)
+![Dashboard Ekranı](docs/pages/dashboard.png)
+![Customers Ekranı](docs/pages/customers.png)
+![Trash Customers Ekranı](docs/pages/trash-customers.png)
+![Users Ekranı](docs/pages/users.png)
+![Users Edit Ekranı](docs/pages/users-edit.png)
+![Users Update Ekranı](docs/pages/users-update.png)
+![Profiles Edit Ekranı](docs/pages/profiles-edit.png)
 
 
 <p align="center">
