@@ -1,5 +1,9 @@
-.navbar {
-    background: linear-gradient(90deg, #059347, #03361b);
+// ========================================
+// 🎨 NAVBAR STYLES
+// ========================================
+
+nav.navbar {
+    background: linear-gradient(90deg, #059347, #03361b) !important;
     transition: background 0.3s ease;
 
     .nav-link {
@@ -15,14 +19,57 @@
         }
     }
 
-    .navbar-brand {
-        color: #fff !important;
-        font-size: 1.1rem;
+    a.navbar-brand {
+        // Light theme: Beyaz (Force override)
+        color: #ffffff !important;
+        font-size: 1.1rem !important;
         letter-spacing: 0.5px;
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        font-weight: 700 !important;
+        
+        i.bi {
+            color: #ffffff !important;
+        }
+        
+        &:hover {
+            color: #ffffff !important;
+            opacity: 0.9;
+        }
+    }
+    
+    // Theme toggle button
+    button.theme-toggle {
+        color: #ffffff !important;
+        border-color: rgba(255, 255, 255, 0.3) !important;
+        
+        i {
+            color: #ffffff !important;
+        }
+        
+        &:hover {
+            background: rgba(255, 255, 255, 0.1) !important;
+            border-color: rgba(255, 255, 255, 0.5) !important;
+        }
     }
 
     .dropdown-menu {
         font-size: 0.95rem;
+    }
+}
+
+// Dark theme'de navbar brand yeşil olsun
+[data-theme="dark"] nav.navbar {
+    a.navbar-brand {
+        color: #20c997 !important;
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        
+        i.bi {
+            color: #20c997 !important;
+        }
+        
+        &:hover {
+            color: #3ddb9a !important;
+        }
     }
 }
 

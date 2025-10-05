@@ -45,7 +45,7 @@
                            class="form-control" 
                            id="email" 
                            name="email" 
-                           placeholder="E-Posta" 
+                           placeholder=" " 
                            required 
                            autofocus
                            value="{{ old('email') }}">
@@ -60,7 +60,7 @@
                            class="form-control" 
                            id="password" 
                            name="password" 
-                           placeholder="Şifre" 
+                           placeholder=" " 
                            required>
                     <label for="password">
                         <i class="bi bi-lock-fill me-2"></i>Şifre

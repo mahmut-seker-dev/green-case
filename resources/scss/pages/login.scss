@@ -86,20 +86,26 @@ html, body {
     }
 }
 
-// Login Card
-.login-card {
-    background: rgba(255, 255, 255, 0.98);
-    backdrop-filter: blur(10px);
-    border-radius: 24px;
+// Login Card - Override global theme styles
+.login-page .login-card {
+    background: rgba(255, 255, 255, 0.98) !important;
+    backdrop-filter: blur(10px) !important;
+    -webkit-backdrop-filter: blur(10px) !important;
+    border-radius: 24px !important;
     box-shadow: 
         0 20px 60px rgba(0, 0, 0, 0.3),
-        0 0 100px rgba(25, 135, 84, 0.1);
+        0 0 100px rgba(25, 135, 84, 0.1) !important;
     padding: 2rem 2rem;
     width: 100%;
     max-width: 440px;
     animation: cardSlideIn 0.6s ease-out;
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
     margin: 0 auto 2rem auto;
+    
+    // Login sayfası text renkleri override edilmesin
+    h2, h3, h4, h5, h6, p, label, span, div {
+        color: inherit ;
+    }
 }
 
 @keyframes cardSlideIn {
@@ -145,44 +151,79 @@ html, body {
 .login-title {
     font-size: 1.85rem;
     font-weight: 700;
-    color: $green-primary;
+    color: $green-primary !important;
     margin-bottom: 0.25rem;
     letter-spacing: 1.5px;
     text-transform: uppercase;
 }
 
 .login-subtitle {
-    color: #6c757d;
-    font-size: 0.875rem;
+    color: #1c4d13 !important;
+    font-size: 0.95rem;
+    font-weight: 500;
     margin: 0;
+    opacity: 0.85;
 }
 
-// Form Styles
-.login-form {
+// Form Styles - Override global theme
+.login-page .login-form {
     margin-bottom: 1.5rem;
     
     .form-floating {
         position: relative;
         
         > .form-control {
-            border: 2px solid #e9ecef;
-            border-radius: 12px;
-            padding: 1rem 1rem;
-            font-size: 0.95rem;
+            background-color: #ffffff !important;
+            border: 2px solid #e9ecef !important;
+            border-radius: 12px !important;
+            padding: 1.625rem 1rem 0.625rem 1rem !important;
+            height: calc(3.5rem + 2px) !important;
+            font-size: 1rem !important;
+            line-height: 1.25 !important;
+            color: #212529 !important;
             transition: all 0.3s ease;
             
             &:focus {
-                border-color: $green-primary;
-                box-shadow: 0 0 0 0.25rem rgba(25, 135, 84, 0.15);
+                background-color: #ffffff !important;
+                border-color: $green-primary !important;
+                color: #212529 !important;
+                box-shadow: 0 0 0 0.25rem rgba(25, 135, 84, 0.15) !important;
+            }
+            
+            &::placeholder {
+                color: transparent !important;
+                opacity: 0 !important;
+            }
+            
+            // Focus veya dolu olduğunda label yukarıda kalır
+            &:focus ~ label,
+            &:not(:placeholder-shown) ~ label {
+                opacity: 0.65;
+                transform: scale(0.85) translateY(-0.5rem) translateX(0.15rem);
+                
+                i {
+                    display: none; // Icon'u gizle
+                }
             }
         }
         
         > label {
-            padding: 1rem 1rem;
-            color: #6c757d;
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            padding: 1rem;
+            pointer-events: none;
+            border: 2px solid transparent;
+            transform-origin: 0 0;
+            transition: opacity 0.1s ease-in-out, transform 0.1s ease-in-out;
+            color: #6c757d !important;
+            font-size: 1rem;
             
             i {
                 color: $green-primary;
+                margin-right: 0.5rem;
+                transition: all 0.2s ease;
             }
         }
     }
@@ -190,7 +231,7 @@ html, body {
     // Password wrapper için ek padding
     .password-wrapper {
         .form-control {
-            padding-right: 3.5rem;
+            padding-right: 3.5rem !important;
         }
     }
     
@@ -200,20 +241,22 @@ html, body {
         .form-check-input {
             width: 1.2rem;
             height: 1.2rem;
-            border: 2px solid #dee2e6;
+            background-color: #ffffff !important;
+            border: 2px solid #dee2e6 !important;
             cursor: pointer;
             
             &:checked {
-                background-color: $green-primary;
-                border-color: $green-primary;
+                background-color: $green-primary !important;
+                border-color: $green-primary !important;
             }
             
             &:focus {
-                box-shadow: 0 0 0 0.25rem rgba(25, 135, 84, 0.15);
+                box-shadow: 0 0 0 0.25rem rgba(25, 135, 84, 0.15) !important;
             }
         }
         
         .form-check-label {
+            color: #212529 !important;
             cursor: pointer;
             user-select: none;
             margin-top: 2px;
@@ -221,21 +264,23 @@ html, body {
     }
 }
 
-// Login Button
-.login-btn {
-    background: linear-gradient(135deg, $green-primary 0%, $green-dark 100%);
-    border: none;
-    border-radius: 12px;
-    padding: 0.875rem;
-    font-weight: 600;
+// Login Button - Override global theme
+.login-page .login-btn {
+    background: linear-gradient(135deg, $green-primary 0%, $green-dark 100%) !important;
+    background-color: $green-primary !important;
+    border: none !important;
+    border-radius: 12px !important;
+    padding: 0.875rem !important;
+    font-weight: 600 !important;
     letter-spacing: 0.5px;
+    color: #ffffff !important;
     transition: all 0.3s ease;
-    box-shadow: 0 4px 12px rgba(25, 135, 84, 0.3);
+    box-shadow: 0 4px 12px rgba(25, 135, 84, 0.3) !important;
     
     &:hover {
         transform: translateY(-2px);
-        box-shadow: 0 8px 20px rgba(25, 135, 84, 0.4);
-        background: linear-gradient(135deg, $green-dark 0%, $green-primary 100%);
+        box-shadow: 0 8px 20px rgba(25, 135, 84, 0.4) !important;
+        background: linear-gradient(135deg, $green-dark 0%, $green-primary 100%) !important;
     }
     
     &:active {
@@ -243,11 +288,19 @@ html, body {
     }
 }
 
-// Test Accounts Section
-.test-accounts {
+// Test Accounts Section - Override global theme
+.login-page .test-accounts {
     margin-top: 1rem;
     padding-top: 1rem;
     border-top: 1px solid #e9ecef;
+    
+    h6, p, small, i {
+        color: #6c757d !important;
+    }
+    
+    .text-muted {
+        color: #6c757d !important;
+    }
     
     .accounts-grid {
         display: grid;
@@ -256,7 +309,8 @@ html, body {
     }
     
     .account-badge {
-        background: #f8f9fa;
+        background: #f8f9fa !important;
+        color: #212529 !important;
         padding: 0.65rem 0.9rem;
         border-radius: 8px;
         font-size: 0.825rem;
@@ -264,8 +318,12 @@ html, body {
         transition: all 0.2s ease;
         cursor: pointer;
         
+        strong {
+            color: #212529 !important;
+        }
+        
         &:hover {
-            background: #e9ecef;
+            background: #e9ecef !important;
             transform: translateX(4px);
         }
         
@@ -273,7 +331,7 @@ html, body {
             border-left-color: #dc3545;
             
             &:hover {
-                background: rgba(220, 53, 69, 0.1);
+                background: rgba(220, 53, 69, 0.1) !important;
             }
         }
         
@@ -281,7 +339,7 @@ html, body {
             border-left-color: #0d6efd;
             
             &:hover {
-                background: rgba(13, 110, 253, 0.1);
+                background: rgba(13, 110, 253, 0.1) !important;
             }
         }
         
@@ -289,7 +347,7 @@ html, body {
             border-left-color: #6c757d;
             
             &:hover {
-                background: rgba(108, 117, 125, 0.1);
+                background: rgba(108, 117, 125, 0.1) !important;
             }
         }
         
@@ -300,16 +358,16 @@ html, body {
     }
     
     code {
-        background: #e9ecef;
+        background: #e9ecef !important;
         padding: 2px 8px;
         border-radius: 4px;
-        color: $green-dark;
+        color: $green-dark !important;
         font-weight: 600;
     }
 }
 
-// Footer
-.login-footer {
+// Footer - Override global theme
+.login-page .login-footer {
     text-align: center;
     margin-top: 0;
     margin-bottom: 2rem;
@@ -323,18 +381,19 @@ html, body {
     p {
         margin: 0;
         font-size: 0.8rem;
+        color: rgba(255, 255, 255, 0.8) !important;
         text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
     }
 }
 
-// Alert Customization
-.alert {
+// Alert Customization - Override global theme
+.login-page .alert {
     border-radius: 12px;
     border: none;
     
     &.alert-danger {
-        background: rgba(220, 53, 69, 0.1);
-        color: #dc3545;
+        background: rgba(220, 53, 69, 0.1) !important;
+        color: #dc3545 !important;
         border-left: 4px solid #dc3545;
     }
 }

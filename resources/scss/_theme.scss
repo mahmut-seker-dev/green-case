@@ -332,7 +332,7 @@ p {
 }
 
 // Link colors (if not primary)
-a:not(.btn):not(.nav-link):not(.dropdown-item) {
+a:not(.btn):not(.nav-link):not(.dropdown-item):not(.navbar-brand) {
     color: var(--primary-color) !important;
     
     &:hover {
